@@ -33,33 +33,23 @@ class LinkedList():
             self.tail.next = node
         self.tail = node
 
-        # if data != None:   
-        #     new_node = Node(data)
-        #     if self.head == None:
-        #         self.head = new_node
-        #         self.tail = new_node
-        #     else:
-        #         node = self.head
-        #         while node.next != None:
-        #             node = node.next
-        #         node.next = new_node
-        #         self.tail = new_node
-
-
 
     def pop_back(self):
-        if self.head == None:
-            return None
-        if self.head.next == None:
-            self.head = None
-            self.tail = None
-        else:
-            node = self.head
-            while node.next.next != None:
-                node = node.next
-            node.next = None
-            self.tail = node
-
+            if self.head == None:
+                return None
+            if self.head.next == None:
+                pop = self.head.data
+                self.head = None
+                self.tail = None
+                return pop
+            else:
+                node = self.head
+                while node.next.next != None:
+                    node = node.next
+                pop = node.next.data
+                node.next = None
+                self.tail = node
+                return pop
         
 
     def get_size(self):
@@ -96,7 +86,7 @@ class LinkedList():
 # print(lis)
 # print(lis.pop_front())
 # print(lis.pop_front())
-print("container of size: " + str(lis.get_size()) + ":")
+# print("container of size: " + str(lis.get_size()) + ":")
 # lis = LinkedList()
 # lis.push_back(3)
 # lis.push_back(1)
