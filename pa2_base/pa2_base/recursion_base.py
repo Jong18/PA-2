@@ -11,13 +11,26 @@ def print_to_screen(head):
         print("")
 
 def get_size(head):
-    return 0
+    if head == None:
+        return 0
+    else:
+        return 1 + get_size(head.next)
 
 def reverse_list(head):
-    return head
+    if head == None or head.next == None :
+        return head
+    else:
+        lis = reverse_list(head.next)
+        head.next.next = head
+        head.next = None
+        return lis
 
 def palindrome(head):
-    return True
+    pass
+    # if head == None:
+    #     return None
+    # else:
+    
 
 if __name__ == "__main__":
     ##
@@ -86,33 +99,33 @@ if __name__ == "__main__":
     print_to_screen(rev_head)
 
 
-    ##
-    print("PALINDROME TESTS")
-    print("\n")
-    head = Node("A", Node("E", Node("L", Node("E", Node("A", None)))))
-    print_to_screen(head)
-    print(palindrome(head))
-    print_to_screen(head)
+    # ##
+    # print("PALINDROME TESTS")
+    # print("\n")
+    # head = Node("A", Node("E", Node("L", Node("E", Node("A", None)))))
+    # print_to_screen(head)
+    # print(palindrome(head))
+    # print_to_screen(head)
 
-    print("\n")
+    # print("\n")
 
-    head = Node("A", Node("E", Node("L", Node("B", Node("A", None)))))
-    print_to_screen(head)
-    print(palindrome(head))
-    print_to_screen(head)
+    # head = Node("A", Node("E", Node("L", Node("B", Node("A", None)))))
+    # print_to_screen(head)
+    # print(palindrome(head))
+    # print_to_screen(head)
 
-    print("\n")
+    # print("\n")
 
-    head = Node("C", Node("A", Node("L", Node("L", Node("A", Node("C", None))))))
-    print_to_screen(head)
-    print(palindrome(head))
-    print_to_screen(head)
+    # head = Node("C", Node("A", Node("L", Node("L", Node("A", Node("C", None))))))
+    # print_to_screen(head)
+    # print(palindrome(head))
+    # print_to_screen(head)
 
-    print("\n")
+    # print("\n")
 
-    head = Node("C", Node("A", Node("L", Node("T", Node("E", Node("C", None))))))
-    print_to_screen(head)
-    print(palindrome(head))
-    print_to_screen(head)
+    # head = Node("C", Node("A", Node("L", Node("T", Node("E", Node("C", None))))))
+    # print_to_screen(head)
+    # print(palindrome(head))
+    # print_to_screen(head)
 
-    print("\n")
+    # print("\n")
